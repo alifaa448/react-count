@@ -1,0 +1,22 @@
+.homepage {
+    text-align: center;
+}
+
+.btn_forward {
+    background-color: #ED3024;
+    color: #fff;
+
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+
+    border-radius: 5px;
+    border: none;
+    outline: none;
+
+    transition: background-color .2s linear;
+}
+
+.btn_forward:hover {
+    background-color: #CD251A;
+}
