@@ -14,29 +14,38 @@ class CounterPageContainer extends Component {
 
 
     handleIncrement = () => {
-        this.setState({ countValue: this.state.countValue + 1 });
+        this.setState((state) => {
+            return {
+                countValue: state.countValue + 1
+            }
+        });
     }
 
 
     handleReset = () => {
-        this.setState({ countValue: 0, isEven: true });
+        this.setState({ countValue: 0 });
     }
 
     handleDecrement = () => {
-        this.setState({ countValue: this.state.countValue - 1 });
+        if (this.state.countValue > 0) {
+            this.setState((state) => {
+                return {
+                    countValue: state.countValue - 1
+                }
+            });
+        }
     }
 
 
     componentDidUpdate(prevProps, prevState) {
-        if (this.state.countValue !== prevState.countValue && this.state.countValue > 0) {
-            this.setState({ isEven: !this.state.isEven })
+        if (this.state.countValue !== prevState.countValue) {
+            this.setState({ isEven: this.state.countValue % 2 === 0 })
         }
-        console.log('Update!');
     }
 
     render() {
             return (
-                <CounterPage countValue={ this.state.countValue } isEven={ this.state.isEven } handleIncrement={ this.handleIncrement } handleDecrement={ this.handleDecrement } handleReset={ this.handleReset } />
+                <CounterPage countValue={this.state.countValue} isEven={this.state.isEven} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} handleReset={this.handleReset} />
             );
     }
 }

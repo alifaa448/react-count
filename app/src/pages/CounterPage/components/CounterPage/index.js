@@ -5,7 +5,7 @@ import routes from "../../../../routes/RoutesNames";
 import Counter from "../Counter";
 import './styles.css';
 
-const CounterPage = ({ countValue, isEven, handleIncrement, handleDecrement, handleReset }) => {
+const CounterPage = ({countValue, isEven, handleIncrement, handleDecrement, handleReset}) => {
     return (
         <div className='counter-page'>
             <h2>Counter Page</h2>
@@ -17,7 +17,7 @@ const CounterPage = ({ countValue, isEven, handleIncrement, handleDecrement, han
             </Link>
 
             <div className='counter'>
-                <Counter countValue={ countValue } isEven={ isEven } handleIncrement={ handleIncrement } handleDecrement={ handleDecrement } handleReset={ handleReset } />
+                <Counter countValue={countValue} isEven={isEven} handleIncrement={handleIncrement} handleDecrement={handleDecrement} handleReset={handleReset} />
             </div>
         </div>
     );
