@@ -14,43 +14,29 @@ class CounterPageContainer extends Component {
 
 
     handleIncrement = () => {
-        this.setState((state) => {
-            return {
-                countValue: state.countValue + 1,
-                isEven: !state.isEven
-            }
-        });
+        this.setState({ countValue: this.state.countValue + 1 });
     }
+
 
     handleReset = () => {
         this.setState({ countValue: 0, isEven: true });
     }
 
     handleDecrement = () => {
-        this.setState((state) => {
-            return state.countValue < 0 ? this.handleReset() : {
-                countValue: state.countValue - 1,
-                isEven: !state.isEven
-            }
-        });
+        this.setState({ countValue: this.state.countValue - 1 });
+    }
 
-        if (this.state.countValue <= 0) {
-            this.handleReset();
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.countValue !== prevState.countValue && this.state.countValue > 0) {
+            this.setState({ isEven: !this.state.isEven })
         }
+        console.log('Update!');
     }
-
-    handleIsEven = () => {
-        return (this.state.isEven)  ? 'введено четное число' : 'введено нечетное число';
-    }
-
-    handleColor = () => {
-        return this.state.isEven ? { backgroundColor: '#202020' } : { backgroundColor: '#1b2062' };
-    }
-
 
     render() {
             return (
-                <CounterPage countValue={ this.state.countValue } isEven={ this.state.isEven } handleIncrement={ this.handleIncrement } handleDecrement={ this.handleDecrement } handleReset={ this.handleReset } handleColor={ this.handleColor } handleIsEven={ this.handleIsEven } />
+                <CounterPage countValue={ this.state.countValue } isEven={ this.state.isEven } handleIncrement={ this.handleIncrement } handleDecrement={ this.handleDecrement } handleReset={ this.handleReset } />
             );
     }
 }

@@ -5,19 +5,19 @@ import routes from "../../../../routes/RoutesNames";
 import Counter from "../Counter";
 import './styles.css';
 
-const CounterPage = (props) => {
+const CounterPage = ({ countValue, isEven, handleIncrement, handleDecrement, handleReset }) => {
     return (
         <div className='counter-page'>
             <h2>Counter Page</h2>
 
-            <Link to={ routes.home }>
+            <Link to={ routes.HOME }>
                 <button className='btn_back'>
                     Go back
                 </button>
             </Link>
 
             <div className='counter'>
-                <Counter countValue={ props.countValue } isEven={ props.isEven } handleIncrement={ props.handleIncrement } handleDecrement={ props.handleDecrement } handleReset={ props.handleReset } handleColor={ props.handleColor } handleIsEven={ props.handleIsEven } />
+                <Counter countValue={ countValue } isEven={ isEven } handleIncrement={ handleIncrement } handleDecrement={ handleDecrement } handleReset={ handleReset } />
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ const HomePage = () => {
     return (
         <div className='homepage'>
             <h1>Home Page</h1>
-            <Link to={ routes.counter }>
+            <Link to={ routes.COUNTER }>
                 <button className='btn_forward'>Go to Counter page</button>
             </Link>
         </div>
