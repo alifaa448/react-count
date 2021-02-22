@@ -1,53 +1,55 @@
-import React, {Component} from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 
 import CounterPage from "../components/CounterPage";
 
-class CounterPageContainer extends Component {
-    constructor(props) {
-        super(props);
+const CounterPageContainer = () => {
 
-        this.state = {
-            countValue: 0,
-            isEven: true
-        }
-    }
+    const [ countState, setCountState ] = useState({
+        countValue: 0,
+        isEven: true
+    });
 
+    useEffect(() => {
+        const isEven = countState.countValue % 2 === 0;
+        setCountState((state) => {
+            return {
+                ...state,
+                isEven
+            }
+        })
+    },[countState.countValue]);
 
-    handleIncrement = () => {
-        this.setState((state) => {
+    const handleIncrement = useCallback(() => {
+        setCountState((state) => {
             return {
                 countValue: state.countValue + 1
             }
         });
-    }
+    }, []);
 
+    const handleReset = useCallback(() => {
+        setCountState({ countValue: 0, isEven: true });
+    }, []);
 
-    handleReset = () => {
-        this.setState({ countValue: 0 });
-    }
-
-    handleDecrement = () => {
-        if (this.state.countValue > 0) {
-            this.setState((state) => {
+    const handleDecrement = useCallback(() => {
+        if (countState.countValue > 0) {
+            setCountState((state) => {
                 return {
                     countValue: state.countValue - 1
                 }
             });
         }
-    }
+    }, [countState.countValue]);
 
-
-    componentDidUpdate(prevProps, prevState) {
-        if (this.state.countValue !== prevState.countValue) {
-            this.setState({ isEven: this.state.countValue % 2 === 0 })
-        }
-    }
-
-    render() {
-            return (
-                <CounterPage countValue={this.state.countValue} isEven={this.state.isEven} handleIncrement={this.handleIncrement} handleDecrement={this.handleDecrement} handleReset={this.handleReset} />
+    return (
+                <CounterPage
+                    countValue={countState.countValue}
+                    isEven={countState.isEven}
+                    handleIncrement={handleIncrement}
+                    handleDecrement={handleDecrement}
+                    handleReset={handleReset}
+                />
             );
-    }
 }
 
 export default CounterPageContainer;

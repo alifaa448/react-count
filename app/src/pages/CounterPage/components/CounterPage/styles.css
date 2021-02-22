@@ -2,22 +2,7 @@
     text-align: center;
 }
 
-.counter {
-    width: 250px;
-    height: 250px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 auto;
-
-    background: #202020;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    color: #fff;
-}
 
 .btn_back {
     /*display: block;*/

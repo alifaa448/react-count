@@ -1,0 +1,21 @@
+.counter__area {
+    display: flex;
+    flex-wrap: wrap;
+}
+.counters__sum,
+.counters__quantity
+{
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 10px 15px;
+
+    color: #ffffff;
+    background-color: lightseagreen;
+}
+.counters__quantity {
+    margin-left: 10px;
+
+    color: #ffffff;
+    background-color: grey;
+}
+

@@ -16,7 +16,7 @@ const CounterPage = ({countValue, isEven, handleIncrement, handleDecrement, hand
                 </button>
             </Link>
 
-            <div className='counter'>
+            <div>
                 <Counter countValue={countValue} isEven={isEven} handleIncrement={handleIncrement} handleDecrement={handleDecrement} handleReset={handleReset} />
             </div>
         </div>
