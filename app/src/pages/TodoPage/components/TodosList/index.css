@@ -1,0 +1,9 @@
+.todo__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 0 auto;
+    height: 200px;
+    overflow-x: auto;
+    overflow-y: auto;
+}

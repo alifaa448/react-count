@@ -14,6 +14,9 @@ const HomePage = () => {
             <Link to={ routes.TOTAL_COUNTERS }>
                 <button className='btn btn_blue'>Go to Counters page</button>
             </Link>
+            <Link to={ routes.TODOLIST }>
+                <button className='btn btn_green'>Go to Todo List page</button>
+            </Link>
         </div>
     );
 };

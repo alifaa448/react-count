@@ -13,6 +13,8 @@
     border: none;
     outline: none;
 
+    cursor: pointer;
+
     transition: background-color .2s linear;
 }
 
@@ -31,4 +33,13 @@
 
 .btn_blue:hover {
     background-color: #141a53;
+}
+
+.btn_green {
+    background-color: #8bde7f;
+    margin-left: 10px;
+}
+
+.btn_green:hover {
+    background-color: #50804d;
 }

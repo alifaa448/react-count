@@ -1,0 +1,17 @@
+body {
+    background: #6190E8;
+    background: -webkit-linear-gradient(to right, #A7BFE8, #6190E8);
+    background: linear-gradient(to right, #A7BFE8, #6190E8);
+    color: #ffffff;
+}
+
+.todo__container {
+    text-align: center;
+}
+
+.todo__title {
+    text-transform: uppercase;
+    font-size: 63px;
+    border: 1px solid #ffffff;
+}
+

@@ -1,0 +1,10 @@
+.todo__input {
+    background: border-box;
+    color: #ffffff;
+
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+
+    outline: none;
+}
