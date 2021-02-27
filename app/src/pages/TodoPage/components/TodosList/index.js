@@ -1,16 +1,31 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
+import './style';
+import {useStyles} from "./style";
+
+import { Container } from '@material-ui/core';
 
 import Todo from "../Todo/index";
 
-import './index.css';
-
-const TodosList = ({ todos, handleDeleteTodo, handleEditTodo, selected, text }) => {
+const TodosList = ({ todos, handleDeleteTodo, handleEditTodo, selected, text, handleOpenModal, handleCloseModal, open }) => {
+    const classes = useStyles();
     return (
-        <div className="todo__wrapper">
+        <Container className={classes.wrapper}>
             {todos.map((todo, index) => (
-                <Todo key={index} todo={todo} idx={index} handleDeleteTodo={handleDeleteTodo} handleEditTodo={handleEditTodo} selected={selected} text={text} />
+                <Todo key={uuidv4()}
+                      todo={todo}
+                      idx={index}
+                      handleDeleteTodo={handleDeleteTodo}
+                      handleEditTodo={handleEditTodo}
+                      selected={selected}
+                      text={text}
+                      handleOpenModal={handleOpenModal}
+                      handleCloseModal={handleCloseModal}
+                      open={open}
+                />
             ))}
-        </div>
+        </Container>
     );
 };
 

@@ -5,7 +5,8 @@ import * as actions from '../actions';
 const defaultState = {
     todos: [],
     text: '',
-    selected: undefined
+    selected: undefined,
+    open: false
 };
 
 const TodoReducer = handleActions({
@@ -43,8 +44,20 @@ const TodoReducer = handleActions({
                 text: ''
             }
         },
-        [actions.DELETE_ALL]: () => defaultState
-    }
+        [actions.DELETE_ALL]: () => defaultState,
+        [actions.SHOW_MODAL]: (state) => {
+            return {
+                ...state,
+                open: true
+            }
+        },
+        [actions.HIDE_MODAL]: (state) => {
+            return {
+                ...state,
+                open: false
+            }
+        }
+        }
 , defaultState);
 
 export default TodoReducer;

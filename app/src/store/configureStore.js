@@ -1,13 +1,11 @@
 import {composeWithDevTools} from "redux-devtools-extension";
-import { persistStore } from "redux-persist";
 import { createStore } from "redux";
 
-import persistedReducer from "./rootReducer";
+import rootReducer from "./rootReducer";
 
-const ConfigureStore = () => {
-    const store = createStore(persistedReducer, composeWithDevTools());
-    const persistor = persistStore(store);
-    return { store, persistor };
+const configureStore = () => {
+    const store = createStore(rootReducer, composeWithDevTools());
+    return store;
 };
 
-export default ConfigureStore;
+export default configureStore;

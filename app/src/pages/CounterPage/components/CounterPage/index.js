@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import routes from "../../../../routes/RoutesNames";
+import routes from "../../../../routes/routesNames";
 
 import Counter from "../Counter";
 import './styles.css';

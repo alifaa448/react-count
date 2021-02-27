@@ -1,16 +1,38 @@
 import React from 'react';
 
-import "./index.css";
+import {useStyles} from "./style";
+import './style';
 
-const InputField = ( { text, handleInputChange, handleSubmit }) => {
+import DeleteIcon from '@material-ui/icons/Delete';
+import { Typography, Box, Button, TextField } from '@material-ui/core';
+
+const InputField = ( { text, handleInputChange, handleSubmit, handleDeleteAll }) => {
+
+    const classes = useStyles();
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <button className="btn btn_blue" type="submit">Add todo</button>
-            </div>
-            <input value={text} className="todo__input" type="text" name="todo" placeholder="Enter smth..." onChange={handleInputChange} />
-        </form>
+        <Box>
+            <Typography className={classes.title} variant="h1" component="h2">
+                Todos App
+            </Typography>
+            <form onSubmit={handleSubmit}>
+                <Button className={classes.button} type="submit" variant="contained" color="primary">
+                    Add todo
+                </Button>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    className={classes.button}
+                    startIcon={<DeleteIcon />}
+                    onClick={handleDeleteAll}
+                >
+                    Delete All
+                </Button>
+                <Box>
+                    <TextField className={classes.textField} id="outlined-basic" label="Enter your todo..." variant="outlined" value={text} onChange={handleInputChange} />
+                </Box>
+            </form>
+        </Box>
     );
 };
 

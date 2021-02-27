@@ -6,7 +6,7 @@ import CounterPageContainer from "../pages/CounterPage/containers/CounterPageCon
 import HomePage from "../pages/HomePage/containers/HomePage";
 import TodoListPageContainer from "../pages/TodoPage/containers/TodoListPageContainer";
 
-import routes from './RoutesNames';
+import routes from './routesNames';
 
 const Routes = () => {
     return (

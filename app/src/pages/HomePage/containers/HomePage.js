@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
-import routes from "../../../routes/RoutesNames";
+import routes from "../../../routes/routesNames";
+import DialogForm from '../../../commonComponents/Dialogs';
 
 const HomePage = () => {
     return (
