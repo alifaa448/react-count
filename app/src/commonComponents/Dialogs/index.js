@@ -1,11 +1,10 @@
 import React from 'react';
-
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@material-ui/core";
 
-const DialogForm = ({ open, handleClose, handleDeleteTodo, idx }) => {
+const DialogForm = ({ isOpen, handleClose, handleDeleteTodo, idx }) => {
 
     return (
-		<Dialog open={open} onClose={handleClose}>
+		<Dialog open={isOpen} onClose={handleClose}>
 			<DialogTitle id="alert-dialog-title">
 				{"Are you sure that you want to delete?"}
 			</DialogTitle>

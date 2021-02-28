@@ -12,10 +12,10 @@ const Routes = () => {
     return (
         <div>
             <Switch>
-                <Route exact path={ routes.HOME } component={ HomePage }/>
-                <Route path={ routes.COUNTER } component={ CounterPageContainer }/>
-                <Route path={ routes.TOTAL_COUNTERS } component={ CounterOfCountersPageContainer }/>
-                <Route path={ routes.TODOLIST } component={ TodoListPageContainer }/>
+                <Route exact path={routes.HOME} component={HomePage}/>
+                <Route path={routes.COUNTER} component={CounterPageContainer}/>
+                <Route path={routes.TOTAL_COUNTERS} component={CounterOfCountersPageContainer}/>
+                <Route path={routes.TODO_LIST} component={TodoListPageContainer}/>
             </Switch>
         </div>
     );

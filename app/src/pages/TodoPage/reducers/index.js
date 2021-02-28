@@ -5,8 +5,8 @@ import * as actions from '../actions';
 const defaultState = {
     todos: [],
     text: '',
-    selected: undefined,
-    open: false
+    isSelected: undefined,
+    isOpen: false
 };
 
 const TodoReducer = handleActions({
@@ -33,14 +33,14 @@ const TodoReducer = handleActions({
             return {
                 ...state,
                 text: state.todos[payload],
-                selected: payload
+                isSelected: payload
             }
         },
         [actions.EDIT_ADDED_TODO]: (state, {payload}) => {
             return {
                 ...state,
                 todos: state.todos.map((todo, index) => index !== payload.selected ? todo : payload.value),
-                selected: undefined,
+                isSelected: undefined,
                 text: ''
             }
         },
@@ -48,16 +48,16 @@ const TodoReducer = handleActions({
         [actions.SHOW_MODAL]: (state) => {
             return {
                 ...state,
-                open: true
+                isOpen: true
             }
         },
         [actions.HIDE_MODAL]: (state) => {
             return {
                 ...state,
-                open: false
+                isOpen: false
             }
         }
-        }
+}
 , defaultState);
 
 export default TodoReducer;

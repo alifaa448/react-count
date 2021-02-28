@@ -1,4 +1,3 @@
-import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import './style';
@@ -8,7 +7,7 @@ import { Container } from '@material-ui/core';
 
 import Todo from "../Todo/index";
 
-const TodosList = ({ todos, handleDeleteTodo, handleEditTodo, selected, text, handleOpenModal, handleCloseModal, open }) => {
+const TodosList = ({ todos, handleDeleteTodo, handleEditTodo, isSelected, text, handleOpenModal, handleCloseModal, isOpen }) => {
     const classes = useStyles();
     return (
         <Container className={classes.wrapper}>
@@ -18,11 +17,11 @@ const TodosList = ({ todos, handleDeleteTodo, handleEditTodo, selected, text, ha
                       idx={index}
                       handleDeleteTodo={handleDeleteTodo}
                       handleEditTodo={handleEditTodo}
-                      selected={selected}
+                      isSelected={isSelected}
                       text={text}
                       handleOpenModal={handleOpenModal}
                       handleCloseModal={handleCloseModal}
-                      open={open}
+                      isOpen={isOpen}
                 />
             ))}
         </Container>

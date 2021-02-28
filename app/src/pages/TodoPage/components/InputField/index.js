@@ -1,13 +1,12 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 import {useStyles} from "./style";
 import './style';
 
 import DeleteIcon from '@material-ui/icons/Delete';
-import { Typography, Box, Button, TextField } from '@material-ui/core';
+import {Typography, Box, Button, TextField} from '@material-ui/core';
 
-const InputField = ( { text, handleInputChange, handleSubmit, handleDeleteAll }) => {
-
+const InputField = ({ text, handleInputChange, handleSubmit, handleDeleteAll }) => {
     const classes = useStyles();
 
     return (
@@ -35,5 +34,12 @@ const InputField = ( { text, handleInputChange, handleSubmit, handleDeleteAll })
         </Box>
     );
 };
+
+InputField.propTypes = {
+    text: PropTypes.string,
+    handleInputChange: PropTypes.func,
+    handleSubmit: PropTypes.func,
+    handleDeleteAll: PropTypes.func
+}
 
 export default InputField;

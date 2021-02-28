@@ -2,7 +2,7 @@ const routes = {
     HOME: '/',
     COUNTER: '/counter',
     TOTAL_COUNTERS: '/counters',
-    TODOLIST: '/todo',
+    TODO_LIST: '/todo',
 };
 
 export default routes;
